@@ -8,9 +8,9 @@ namespace Kalkulator_systemów_liczbowych
 {
     abstract class Systemy
     {
-        public int wprowadzonaLiczba;
+        
         public List<int> resztaZDzielenia = new List<int>();
-
+        public int wprowadzonaLiczba;
         public abstract void Kalkuluj();
         
         
