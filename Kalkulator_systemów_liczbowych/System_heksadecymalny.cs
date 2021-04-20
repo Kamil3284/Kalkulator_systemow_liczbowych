@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kalkulator_systemów_liczbowych
 {
-    public class Systemy
+    class System_heksadecymalny: Systemy
     {
-        
-        public List<int> resztaZDzielenia = new List<int>();
-        public int wprowadzonaLiczba;
-        public int reszta;
-        
-        public virtual void Kalkuluj(int dzielnik, string nazwaSystemu)
+        //Do zrobienia: konwersja liczb na litery 
+        public override void Kalkuluj(int dzielnik, string nazwaSystemu)
         {
         WprowadzPonownie:
             Console.WriteLine("\nWprowadź liczbę: ");
@@ -24,6 +20,7 @@ namespace Kalkulator_systemów_liczbowych
                 do
                 {
                     reszta = wprowadzonaLiczba % dzielnik;
+                    KonwertujNaLitery();
                     resztaZDzielenia.Add(reszta);
                     wprowadzonaLiczba /= dzielnik;
 
@@ -47,9 +44,15 @@ namespace Kalkulator_systemów_liczbowych
             }
 
         }
-
-
+        public char KonwertujNaLitery()
+        {
+            
+            switch (reszta)
+            {
+                case 10: {return = 'A';break; }
+            }
+        }
     }
 
-    
+    }
 }
