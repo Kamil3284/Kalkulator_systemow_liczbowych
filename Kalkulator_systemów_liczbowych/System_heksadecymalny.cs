@@ -9,6 +9,8 @@ namespace Kalkulator_systemów_liczbowych
     class System_heksadecymalny: Systemy
     {
         //Do zrobienia: konwersja liczb na litery 
+        public List<string> resztaZDzielenia = new List<string>();
+        public char b; //Zmienna pomagająca w konwersji liczb na litery
         public override void Kalkuluj(int dzielnik, string nazwaSystemu)
         {
         WprowadzPonownie:
@@ -20,8 +22,17 @@ namespace Kalkulator_systemów_liczbowych
                 do
                 {
                     reszta = wprowadzonaLiczba % dzielnik;
-                    KonwertujNaLitery();
-                    resztaZDzielenia.Add(reszta);
+
+                    if(reszta>9)
+                    {
+                        KonwertujNaLitery();
+                        resztaZDzielenia.Add(b.ToString());
+                    }
+                    else
+                    {
+                        resztaZDzielenia.Add(reszta.ToString());
+                    }
+                    
                     wprowadzonaLiczba /= dzielnik;
 
                 }
@@ -49,10 +60,17 @@ namespace Kalkulator_systemów_liczbowych
             
             switch (reszta)
             {
-                case 10: {return = 'A';break; }
+                case 10: { b = 'A'; break; }
+                case 11: { b = 'B'; break; }
+                case 12: { b = 'C'; break; }
+                case 13: { b = 'D'; break; }
+                case 14: { b = 'F'; break; }
+                case 15: { b = 'E'; break; }
+                default:{ break;}
             }
+            return b;
         }
     }
 
-    }
+    
 }

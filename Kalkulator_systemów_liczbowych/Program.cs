@@ -15,12 +15,13 @@ namespace Kalkulator_systemów_liczbowych
             Console.WriteLine("4.)Dziesiętny");
             int wyborMenu = Convert.ToInt32(Console.ReadLine());
             Systemy systemy = new Systemy();
+            System_heksadecymalny decymalny = new System_heksadecymalny();
 
             switch(wyborMenu)
             {
                 case 1: { systemy.Kalkuluj(2,"binarny"); break; }
                 case 2: { systemy.Kalkuluj(8,"oktalny"); break; }
-                case 3: { systemy.Kalkuluj(16,"heksadecymalny"); break; }
+                case 3: { decymalny.Kalkuluj(16,"heksadecymalny"); break; }
                 case 4: { systemy.Kalkuluj(2,"dziesiętny"); break; }
                 default: { Console.WriteLine("Wprowadzono nieprawidłową liczbę!"); goto WybierzOpcje;}
             }
